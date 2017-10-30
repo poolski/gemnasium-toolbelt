@@ -12,9 +12,11 @@ This version also supports being used in CI workflows such as Gitlab CI.
 To use this with Docker, pull the image and run it from your code directory as follows.
 
 **Ruby**
+
 `docker run -e GEMNASIUM_TOKEN=yourtokenhere -v $(pwd):/code poolski/gemnasium-toolbelt gemnasium eval -f=/code/Gemfile`
 
 **Python**
+
 `docker run -e GEMNASIUM_TOKEN=yourtokenhere -v $(pwd):/code poolski/gemnasium-toolbelt gemnasium eval -f=/code/requirements.txt`
 
 If you don't want to specify the token as part of the command, you can always add it to your local environment variables using
