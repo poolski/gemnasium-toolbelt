@@ -1,12 +1,10 @@
-FROM alpine
+FROM debian
 
 ENV VERSION 1.0.3
 
-RUN apk update && \
-	apk add wget ca-certificates && \
-	cd /tmp && \
-	wget -q https://github.com/gemnasium/toolbelt/releases/download/${VERSION}/gemnasium_${VERSION}_linux_amd64.tar.gz && \
-	tar xvzf gemnasium_${VERSION}_linux_amd64.tar.gz && \
-	mv gemnasium_${VERSION}_linux_amd64/gemnasium /usr/local/bin/
+RUN apt-get update && \
+ 	apt-get install -qy wget && \
+ 	wget -q https://github.com/gemnasium/toolbelt/releases/download/1.0.3/gemnasium-toolbelt_1.0.3_amd64.deb -O /tmp/gemnasium.deb && \
+ 	dpkg -i /tmp/gemnasium.deb
 
-CMD /bin/sh
+CMD /bin/bash
