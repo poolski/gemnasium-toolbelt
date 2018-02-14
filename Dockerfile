@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV VERSION 0.2.11
+ENV VERSION 1.0.3
 
 RUN apk update && \
 	apk add wget ca-certificates && \
